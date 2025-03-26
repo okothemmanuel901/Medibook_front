@@ -1,4 +1,4 @@
-import axios from 'axios'; 
+import axios from 'axios';
 import router from '../router/index';
 import TokenService from './token.service';
 // import axios from above
@@ -14,7 +14,7 @@ instance.interceptors.request.use(
     (config) => {
       const token = TokenService.getToken();
       if (token) {
-        config.headers["Authorization"] = 'Bearer ' + token; 
+        config.headers["Authorization"] = 'Bearer ' + token;
       }
       return config;
     },
@@ -23,7 +23,7 @@ instance.interceptors.request.use(
     }
   );
 
-  
+
 // Interceptor to handle global authentication errors
 instance.interceptors.response.use(
   (response) => {
@@ -41,4 +41,3 @@ instance.interceptors.response.use(
 
   export default instance;
 
-  
