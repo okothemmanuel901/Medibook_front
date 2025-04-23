@@ -2,8 +2,8 @@
   <div class="doctors-container">
     <!-- Header Section -->
     <header class="header">
-      <h1>Meet Our Doctors</h1>
-      <p>Experienced professionals ready to assist you</p>
+      <h1>Our Doctor Team</h1>
+      <p>Your information is secure and encrypted, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquat enim ad minim.</p>
     </header>
 
     <!-- Doctors List -->
@@ -25,36 +25,43 @@
 
 <script>
 export default {
+  name: 'DoctorTeam',
   data() {
     return {
       doctors: [
         {
           id: 1,
-          name: "Dr. John Smith",
-          specialty: "Cardiologist",
-          bio: "Specializing in heart health with over 15 years of experience.",
-          image: "https://images.unsplash.com/photo-1612349317154-3c9ba00a3776?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60"
+          name: "Josie Wells",
+          specialty: "Ph.D, DPT, MS OMPT",
+          bio: "Based in the United Kingdom. Available today with 4-star rating.",
+          image: "https://cdn-icons-png.flaticon.com/512/2922/2922506.png"
         },
         {
           id: 2,
-          name: "Dr. Emily Johnson",
-          specialty: "Pediatrician",
-          bio: "Dedicated to children's health and well-being.",
-          image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60"
+          name: "Stanley George",
+          specialty: "Ph.D, DPT, MS OMPT",
+          bio: "Based in the United Kingdom. Available today with 4-star rating.",
+          image: "https://cdn-icons-png.flaticon.com/512/2922/2922510.png"
         },
         {
           id: 3,
-          name: "Dr. Anita Patel",
-          specialty: "General Practitioner",
-          bio: "Providing comprehensive care for all ages.",
-          image: "https://images.unsplash.com/photo-1598887142487-3c360d73793b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60"
+          name: "Caleb Bowen",
+          specialty: "Ph.D, DPT, MS OMPT",
+          bio: "Based in the United Kingdom. Available today with 4-star rating.",
+          image: "https://cdn-icons-png.flaticon.com/512/2922/2922512.png"
+        },
+        {
+          id: 4,
+          name: "Christine Lawson",
+          specialty: "Ph.D, DPT, MS OMPT",
+          bio: "Based in the United Kingdom. Available today with 4-star rating.",
+          image: "https://cdn-icons-png.flaticon.com/512/2922/2922561.png"
         }
       ]
     };
   },
   methods: {
     bookAppointment(doctorName) {
-      // Navigate to AppointmentPage with doctor pre-selected
       this.$router.push({
         name: 'AppointmentPage',
         query: { doctor: doctorName }
@@ -76,7 +83,7 @@ export default {
 .header {
   text-align: center;
   padding: 50px 20px;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
               url('https://images.unsplash.com/photo-1576091160399-1d65cdaa8778?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
   background-size: cover;
   background-position: center;
@@ -97,16 +104,17 @@ export default {
 /* Doctors Grid */
 .doctors-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
 }
 
 .doctor-card {
-  background-color: #ffffff;
+  background-color: #2ecc40;
   border-radius: 15px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s ease;
+  color: white;
 }
 
 .doctor-card:hover {
@@ -115,9 +123,10 @@ export default {
 
 .doctor-image {
   width: 100%;
-  height: 250px;
+  height: 200px;
   background-size: cover;
   background-position: center;
+  background-color: #475b66;
 }
 
 .doctor-info {
@@ -126,37 +135,38 @@ export default {
 }
 
 .doctor-info h3 {
-  font-size: 24px;
-  color: #333;
-  margin-bottom: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 8px;
 }
 
 .specialty {
-  font-size: 16px;
-  color: #2d79f3;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fffbd2;
   margin-bottom: 10px;
 }
 
 .bio {
   font-size: 14px;
-  color: #666;
+  color: #e9ffe9;
   margin-bottom: 15px;
 }
 
 .book-btn {
   padding: 10px 20px;
-  background-color: #2d79f3;
-  color: white;
+  background-color: #fff;
+  color: #2ecc40;
   border: none;
   border-radius: 8px;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .book-btn:hover {
-  background-color: #1a5ed9;
+  background-color: #f2f2f2;
 }
 
 @media (max-width: 768px) {
@@ -165,4 +175,3 @@ export default {
   }
 }
 </style>
-

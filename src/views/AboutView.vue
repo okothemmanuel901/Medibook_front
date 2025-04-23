@@ -1,48 +1,49 @@
 <template>
-  <div class="welcome-container">
+  <div class="about-container">
     <!-- Hero Section -->
     <section class="hero-section">
       <div class="hero-content">
-        <h1 class="hero-title">Make Cities Safe, Resilient, and Sustainable</h1>
-        <p class="hero-subtitle">Your safety is our priority. Access emergency services, real-time updates, and recovery assistance in one place.</p>
-        <button class="cta-button" @click="scrollToFeatures">Explore Features</button>
+        <h1 class="hero-title">Simplifying Healthcare with Easy Hospital Booking</h1>
+        <p class="hero-subtitle">
+          We are dedicated to making healthcare accessible. Book appointments, manage records, and connect with top hospitals seamlessly.
+        </p>
+        <button class="cta-button" @click="scrollToFeatures">Discover Our Services</button>
       </div>
-     
     </section>
 
     <!-- Features Section -->
     <section class="features-section" ref="featuresSection">
-      <h2 class="section-title">Key Features</h2>
+      <h2 class="section-title">Why Choose Us</h2>
       <div class="feature-cards">
-        <!-- Emergency Response & Coordination -->
+        <!-- Easy Appointment Booking -->
         <div class="feature-card" @mouseenter="animateCard($event)" @mouseleave="resetCard($event)">
-          <i class="mdi mdi-alert-circle-outline feature-icon"></i>
-          <h3>Emergency Response</h3>
-          <p>Access police, ambulance, and fire services with a single tap. Share your live location with trusted circles.</p>
-          <button class="feature-button" @click="openEmergencyModal">Learn More</button>
+          <i class="fas fa-calendar-check feature-icon"></i>
+          <h3>Easy Appointment Booking</h3>
+          <p>Schedule appointments with doctors across top hospitals in just a few clicks.</p>
+          <button class="feature-button" @click="openBookingModal">Learn More</button>
         </div>
 
-        <!-- Real-Time Safety Updates -->
+        <!-- Real-Time Availability -->
         <div class="feature-card" @mouseenter="animateCard($event)" @mouseleave="resetCard($event)">
-          <i class="mdi mdi-map-marker-radius feature-icon"></i>
-          <h3>Real-Time Safety Updates</h3>
-          <p>Get zonal updates, safety ratings, and alerts for your area.</p>
-          <button class="feature-button" @click="openSafetyModal">Learn More</button>
+          <i class="fas fa-clock feature-icon"></i>
+          <h3>Real-Time Availability</h3>
+          <p>Check live availability of doctors and book slots that suit your schedule.</p>
+          <button class="feature-button" @click="openAvailabilityModal">Learn More</button>
         </div>
 
-        <!-- First Aid & Recovery -->
+        <!-- Medical Records Management -->
         <div class="feature-card" @mouseenter="animateCard($event)" @mouseleave="resetCard($event)">
-          <i class="mdi mdi-first-aid feature-icon"></i>
-          <h3>First Aid & Recovery</h3>
-          <p>Step-by-step tutorials for injuries and post-emergency recovery assistance.</p>
-          <button class="feature-button" @click="openFirstAidModal">Learn More</button>
+          <i class="fas fa-file-medical feature-icon"></i>
+          <h3>Medical Records Management</h3>
+          <p>Securely store and access your medical history and prescriptions anytime.</p>
+          <button class="feature-button" @click="openRecordsModal">Learn More</button>
         </div>
 
-        <!-- Support Systems -->
+        <!-- 24/7 Support -->
         <div class="feature-card" @mouseenter="animateCard($event)" @mouseleave="resetCard($event)">
-          <i class="mdi mdi-hand-heart feature-icon"></i>
-          <h3>Support Systems</h3>
-          <p>Psychological and logistical support for crisis situations.</p>
+          <i class="fas fa-headset feature-icon"></i>
+          <h3>24/7 Support</h3>
+          <p>Our team is here to assist you with booking, cancellations, and more, round the clock.</p>
           <button class="feature-button" @click="openSupportModal">Learn More</button>
         </div>
       </div>
@@ -50,17 +51,25 @@
 
     <!-- Call-to-Action Section -->
     <section class="cta-section">
-      <h2 class="cta-title">Join Us in Building Safer Communities</h2>
-      <p class="cta-subtitle">Download the app today and take the first step towards a safer, more resilient city.</p>
-      <button class="cta-button" @click="downloadApp">Download Now</button>
+      <h2 class="cta-title">Join Thousands of Happy Patients</h2>
+      <p class="cta-subtitle">
+        Sign up today and experience a hassle-free way to manage your healthcare needs.
+      </p>
+      <div class="cta-buttons">
+    <button class="cta-button" @click="goToRegister">Sign Up Now</button>
+    <button class="cta-button secondary" @click="goToFAQ">View FAQ</button>
+    <button class="cta-button secondary" @click="goToContact">Contact Us</button>
+  </div>
     </section>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 
 const featuresSection = ref(null);
+const router = useRouter();
 
 // Scroll to features section
 const scrollToFeatures = () => {
@@ -80,21 +89,26 @@ const resetCard = (event) => {
 };
 
 // Modal handlers (placeholders for now)
-const openEmergencyModal = () => alert('Emergency Response: Learn More');
-const openSafetyModal = () => alert('Safety Updates: Learn More');
-const openFirstAidModal = () => alert('First Aid: Learn More');
-const openSupportModal = () => alert('Support Systems: Learn More');
+const openBookingModal = () => alert('Appointment Booking: Learn More');
+const openAvailabilityModal = () => alert('Real-Time Availability: Learn More');
+const openRecordsModal = () => alert('Medical Records: Learn More');
+const openSupportModal = () => alert('24/7 Support: Learn More');
 
-// Download app handler
-const downloadApp = () => {
-  alert('Redirecting to download page...');
-  // Add actual download logic here
+
+const goToRegister = () => {
+  router.push('/registerPage');
+};
+const goToFAQ = () => {
+  router.push('/FAQ');
+};
+const goToContact = () => {
+  router.push('/contact');
 };
 </script>
 
 <style scoped>
 /* General Styles */
-.welcome-container {
+.about-container {
   font-family: 'Arial', sans-serif;
   color: #333;
   background-color: #f9f9f9;
@@ -103,15 +117,15 @@ const downloadApp = () => {
 /* Hero Section */
 .hero-section {
   display: flex;
-  justify-content: space-between;
+  justify-content:first baseline;
   align-items: center;
   padding: 4rem 2rem;
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  background: linear-gradient(135deg, #48bb78, #48bb78);
   color: white;
 }
 
 .hero-content {
-  max-width: 50%;
+  max-width: 30%;
 }
 
 .hero-title {
@@ -131,10 +145,10 @@ const downloadApp = () => {
   background-color: #ff6f61;
   color: white;
   border: none;
-  border-radius: 4px;
-  font-size: 1rem;
+  border-radius: 5cap;
+  font-size: 1.2rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.4s ease;
 }
 
 .cta-button:hover {
@@ -177,13 +191,13 @@ const downloadApp = () => {
 
 .feature-icon {
   font-size: 3rem;
-  color: #2a5298;
+  color: #48bb78;
   margin-bottom: 1rem;
 }
 
 .feature-button {
   padding: 0.5rem 1rem;
-  background-color: #2a5298;
+  background-color: #48bb78;
   color: white;
   border: none;
   border-radius: 4px;
@@ -192,13 +206,13 @@ const downloadApp = () => {
 }
 
 .feature-button:hover {
-  background-color: #1e3c72;
+  background-color: #48bb78;
 }
 
 /* CTA Section */
 .cta-section {
   padding: 4rem 2rem;
-  background: linear-gradient(135deg, #2a5298, #1e3c72);
+  background: linear-gradient(135deg, #48bb78, #48bb78);
   color: white;
   text-align: center;
 }

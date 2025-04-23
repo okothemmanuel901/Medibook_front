@@ -1,94 +1,38 @@
 <template>
-  <nav>
-    <ul>
-      <li>
-        <router-link to="/">Homeview</router-link>
-      </li>
-      <li>
-        <router-link to="/patient">Patient</router-link>
-      </li>
-      <li>
-        <router-link to="/AppointmentPage">Appointments</router-link>
-      </li>
-      <li>
-        <router-link to="/doctors">Doctors</router-link>
-      </li>
-      <li>
-        <router-link to="/Role_page">Role_page</router-link>
-      </li>
-      <li>
-        <router-link to="/Welcomepage">Back to home</router-link>
-      </li>
-    </ul>
+  <!-- Navigation Section -->
+  <nav class="bg-white shadow py-4">
+    <div class="container mx-auto flex justify-center space-x-12 px-4"> <!-- Increased space-x-8 to space-x-12 -->
+      <router-link to="/" class="text-gray-600 hover:text-green-500 px-4">HOME</router-link> <!-- Added padding -->
+      <router-link to="/about" class="text-gray-600 hover:text-green-500 px-4">ABOUT</router-link>
+      <router-link to="/doctors" class="text-gray-600 hover:text-green-500 px-4">DOCTORS</router-link>
+      <router-link to="/faq" class="text-gray-600 hover:text-green-500 px-4">FAQ</router-link>
+      <router-link to="/Services" class="text-gray-600 hover:text-green-500 px-4">SERVICES</router-link>
+      <router-link to="/appointmentpage" class="text-gray-600 hover:text-green-500 px-4"> APPOINTMENT</router-link>
+      <router-link to="/contact" class="text-gray-600 hover:text-green-500 px-4">CONTACT</router-link>
+    </div>
   </nav>
 </template>
 
 <script>
 export default {
-  name: 'Navbar',
-}
+  name: "Navbar_Section",
+};
 </script>
 
-<style>
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
-
-html {
-  height: 100%;
-  background-image: linear-gradient(to right top, #8e44ad 0%, #3498db 100%);
-}
-
+<style scoped>
+/* Navbar styles */
 nav {
-  max-width: 900px;
-  mask-image: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0) 0%,
-    #ffffff 25%,
-    #ffffff 75%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+}
+
+.container {
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 60px 0;
 }
 
-nav ul {
-  text-align: center;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.2) 25%,
-    rgba(255, 255, 255, 0.2) 75%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  box-shadow:
-    0 0 25px rgba(0, 0, 0, 0.1),
-    inset 0 0 1px rgba(255, 255, 255, 0.6);
-}
-
-nav ul li {
-  display: inline-block;
-}
-
-nav ul li a {
-  padding: 20px;
-  font-family: 'Open Sans', sans-serif;
-  text-transform: uppercase;
-  color: rgba(0, 35, 122, 0.5);
-  font-size: 18px;
-  text-decoration: none;
-  display: block;
-}
-
-nav ul li a:hover {
-  box-shadow:
-    0 0 10px rgba(203, 18, 18, 0.1),
-    inset 0 0 1px rgba(255, 255, 255, 0.6);
-  background: rgba(255, 255, 255, 0.1);
-  color: rgba(0, 35, 122, 0.7);
-}
-
-/* Style active router-link */
 .router-link-active {
-  color: rgba(0, 35, 122, 0.9);
-  background: rgba(255, 255, 255, 0.2);
+  color: #38a169; /* Green color for active link */
 }
 </style>

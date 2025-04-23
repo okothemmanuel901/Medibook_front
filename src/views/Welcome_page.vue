@@ -20,7 +20,7 @@ const user = JSON.parse(localStorage.getItem('user') || '{}')
 async function handleLogout() {
   try {
     await axios.post(
-      'http:///api/logout',
+      'http://api/logout',
       {},
       {
         headers: {
@@ -30,7 +30,7 @@ async function handleLogout() {
     )
     localStorage.removeItem('token')
     localStorage.removeItem('user')
-    router.push('/login')
+    router.push('/Homeview')
   } catch (err) {
     console.error('Logout failed', err)
   }
@@ -39,17 +39,17 @@ async function handleLogout() {
 
 <style scooped>
 .welcome-container {
-  display: flex;
+  display:flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #b6b1b1;
+  background-color: #5b6895;
 }
 
 .welcome-card {
-  background-color: #ffffff;
-  padding: 40px;
-  width: 500px;
+  background-color: #9b91e4;
+  padding: 100px;
+  width: 800px;
   border-radius: 20px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
     Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -59,8 +59,8 @@ async function handleLogout() {
 
 .welcome-card h1 {
   color: #151717;
-  font-size: 28px;
-  margin-bottom: 20px;
+  font-size: 68px;
+  margin-bottom: 5px;
 }
 
 .welcome-card p {
@@ -74,16 +74,16 @@ async function handleLogout() {
   background-color: #151717;
   border: none;
   color: white;
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 19px;
+  font-weight: 550;
   border-radius: 10px;
   height: 50px;
-  width: 100%;
+  width:110%;
   cursor: pointer;
   transition: 0.2s ease-in-out;
 }
 
 .button-logout:hover {
-  background-color: #2d79f3;
+  background-color: #4a89ef;
 }
 </style>

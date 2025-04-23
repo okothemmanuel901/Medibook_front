@@ -5,7 +5,7 @@
         <h1>Book Your Doctor Appointment</h1>
         <p>Schedule a consultation with ease</p>
       </header>
-  
+
       <!-- Appointment Form -->
       <section class="appointment-form-container">
         <form @submit.prevent="submitAppointment" class="appointment-form">
@@ -20,20 +20,20 @@
               <option value="Dr. Patel">Dr. Anita Patel - General Practitioner</option>
             </select>
           </div>
-  
+
           <!-- Date Selection -->
           <div class="form-group">
             <label for="date">Appointment Date</label>
-            <input 
-              v-model="appointment.date" 
-              type="date" 
-              id="date" 
-              :min="today" 
-              required 
+            <input
+              v-model="appointment.date"
+              type="date"
+              id="date"
+              :min="today"
+              required
               class="input-field"
             >
           </div>
-  
+
           <!-- Time Selection -->
           <div class="form-group">
             <label for="time">Appointment Time</label>
@@ -45,50 +45,50 @@
               <option value="16:00">04:00 PM</option>
             </select>
           </div>
-  
+
           <!-- Patient Name -->
           <div class="form-group">
             <label for="patientName">Your Name</label>
-            <input 
-              v-model="appointment.patientName" 
-              type="text" 
-              id="patientName" 
-              placeholder="Enter your full name" 
-              required 
+            <input
+              v-model="appointment.patientName"
+              type="text"
+              id="patientName"
+              placeholder="Enter your full name"
+              required
               class="input-field"
             >
           </div>
-  
+
           <!-- Patient Contact -->
           <div class="form-group">
             <label for="contact">Contact Number</label>
-            <input 
-              v-model="appointment.contact" 
-              type="tel" 
-              id="contact" 
-              placeholder="Enter your phone number" 
-              required 
+            <input
+              v-model="appointment.contact"
+              type="tel"
+              id="contact"
+              placeholder="Enter your phone number"
+              required
               class="input-field"
             >
           </div>
-  
+
           <!-- Submit Button -->
           <button type="submit" class="submit-btn">Book Appointment</button>
         </form>
-  
+
         <!-- Doctor Image Section -->
         <div class="doctor-image">
           <!-- Placeholder for Doctor Image -->
         </div>
       </section>
-  
+
       <!-- Confirmation Message -->
       <div v-if="confirmation" class="confirmation">
         <p>{{ confirmation }}</p>
       </div>
     </div>
   </template>
-  
+
   <script>
   export default {
     data() {
@@ -122,7 +122,7 @@
     }
   }
   </script>
-  
+
   <style scoped>
   .appointment-container {
     max-width: 1200px;
@@ -130,7 +130,7 @@
     padding: 20px;
     font-family: 'Arial', sans-serif;
   }
-  
+
   /* Header Styles */
   .header {
     text-align: center;
@@ -142,16 +142,16 @@
     border-radius: 10px;
     margin-bottom: 40px;
   }
-  
+
   .header h1 {
     font-size: 36px;
     margin-bottom: 10px;
   }
-  
+
   .header p {
     font-size: 18px;
   }
-  
+
   /* Form Container */
   .appointment-form-container {
     display: flex;
@@ -159,27 +159,27 @@
     align-items: flex-start;
     gap: 40px;
   }
-  
+
   .appointment-form {
     background-color: #ffffff;
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 100px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 3px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 500px;
   }
-  
+
   .form-group {
     margin-bottom: 20px;
   }
-  
+
   .form-group label {
     display: block;
     font-weight: 600;
     color: #333;
     margin-bottom: 8px;
   }
-  
+
   .input-field {
     width: 100%;
     padding: 12px;
@@ -188,12 +188,12 @@
     font-size: 16px;
     transition: border-color 0.3s ease;
   }
-  
+
   .input-field:focus {
     border-color: #2d79f3;
     outline: none;
   }
-  
+
   .submit-btn {
     width: 100%;
     padding: 12px;
@@ -206,11 +206,11 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
-  
+
   .submit-btn:hover {
     background-color: #1a5ed9;
   }
-  
+
   /* Doctor Image Section */
   .doctor-image {
     width: 100%;
@@ -221,7 +221,7 @@
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   }
-  
+
   /* Confirmation Message */
   .confirmation {
     margin-top: 30px;
@@ -232,13 +232,13 @@
     color: #2d662d;
     font-size: 16px;
   }
-  
+
   @media (max-width: 768px) {
     .appointment-form-container {
       flex-direction: column;
       align-items: center;
     }
-    
+
     .doctor-image {
       height: 300px;
       max-width: 100%;
