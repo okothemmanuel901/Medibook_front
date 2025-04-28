@@ -1,8 +1,8 @@
 <template>
-  <!-- Navigation Section -->
+  
   <nav class="bg-white shadow py-4">
-    <div class="container mx-auto flex justify-center space-x-12 px-4"> <!-- Increased space-x-8 to space-x-12 -->
-      <router-link to="/" class="text-gray-600 hover:text-green-500 px-4">HOME</router-link> <!-- Added padding -->
+    <div class="container mx-auto flex justify-center space-x-12 px-4">
+      <router-link to="/" class="text-gray-600 hover:text-green-500 px-4">HOME</router-link>
       <router-link to="/about" class="text-gray-600 hover:text-green-500 px-4">ABOUT</router-link>
       <router-link to="/doctors" class="text-gray-600 hover:text-green-500 px-4">DOCTORS</router-link>
       <router-link to="/faq" class="text-gray-600 hover:text-green-500 px-4">FAQ</router-link>
@@ -20,7 +20,7 @@ export default {
 </script>
 
 <style scoped>
-/* Navbar styles */
+
 nav {
   background-color: white;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -33,6 +33,6 @@ nav {
 }
 
 .router-link-active {
-  color: #38a169; /* Green color for active link */
+  color: #38a169;
 }
 </style>

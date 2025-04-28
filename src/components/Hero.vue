@@ -36,7 +36,7 @@ export default {
     const router = useRouter();
 
     const goToAboutUs = () => {
-      router.push('/');
+      router.push('/About');
     };
 
     const goToContact = () => {
@@ -136,9 +136,9 @@ export default {
 .hero-image {
   width: 100%;
   height: auto;
-  max-height: 400px; /* Limit the height for better fit */
-  object-fit: cover; /* Ensure the image fits nicely without distortion */
-  border-radius: 8px; /* Add a subtle border radius for aesthetics */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a shadow for depth */
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 </style>

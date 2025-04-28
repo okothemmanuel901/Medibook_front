@@ -1,6 +1,6 @@
 // src/services/auth.service.js
 import { ref, computed } from 'vue'
-import TokenService from '../services/token.service'
+import TokenService from '../Services/token.service'
 import api from '../Services/api'
 
 // Create reactive state
@@ -25,6 +25,14 @@ export function useAuth() {
 
   // Get current user
   const currentUser = computed(() => user.value)
+
+  //  // Get user abilities
+  //  const userAbilities = computed(() => abilities.value)
+
+  //  // Check if user has a specific ability
+  //  function can(ability) {
+  //    return abilities.value[ability] === true
+  //  }
 
   // Login method
   async function login(credentials) {
@@ -101,7 +109,7 @@ export function useAuth() {
 
     try {
       if (TokenService.isAuthenticated()) {
-        const response = await api.get('me')
+        const response = await api.get('user-info')
 
         // Check if we have valid user data
         if (response.data.user) {

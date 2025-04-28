@@ -116,7 +116,7 @@ const goToContact = () => {
 
 /* Hero Section */
 .hero-section {
-  display: flex;
+  display: inline-table;
   justify-content:first baseline;
   align-items: center;
   padding: 4rem 2rem;

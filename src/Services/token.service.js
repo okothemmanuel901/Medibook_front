@@ -1,5 +1,5 @@
 import router from '../router/index'
-import api from './api'
+import api from '../Services/api'
 
 class TokenService {
   setToken(token) {
@@ -22,7 +22,7 @@ class TokenService {
 
   async userInfo() {
     try {
-      const response = await api.get('me')
+      const response = await api.get('user-info')
       localStorage.setItem('user', response.data.name)
     } catch (error) {
       console.error('No Authenticated User Was Found', error)

@@ -52,7 +52,7 @@ const redirectToRegister = () => {
 .brand {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .brand-icon {

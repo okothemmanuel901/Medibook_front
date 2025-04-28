@@ -30,7 +30,7 @@ async function handleLogout() {
     )
     localStorage.removeItem('token')
     localStorage.removeItem('user')
-    router.push('/Homeview')
+    router.push('/')
   } catch (err) {
     console.error('Logout failed', err)
   }
